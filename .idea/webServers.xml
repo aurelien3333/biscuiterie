@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="2e2a3ec6-a58c-4ef0-9845-6c47553b6a7c" name="serv" url="http://crm-biscuiterie.ur6m0lhzhf-e9249pv8w3kr.p.runcloud.link">
+        <fileTransfer rootFolder="/home/runcloud/webapps/crm-biscuiterie" accessType="SFTP" host="217.182.206.129" port="22" sshConfigId="3d2607de-dd44-4da7-bf0f-1da0194dc23f" sshConfig="runcloud@217.182.206.129:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

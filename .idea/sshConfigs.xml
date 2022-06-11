@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="217.182.206.129" id="3d2607de-dd44-4da7-bf0f-1da0194dc23f" port="22" nameFormat="DESCRIPTIVE" username="runcloud" useOpenSSHConfig="true" />
+    </configs>
+  </component>
+</project>
