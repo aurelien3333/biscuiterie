@@ -14,5 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    $ingredient = \App\Models\Ingredient::first();
+    dd($ingredient->price_ttc);
     return view('welcome');
 });

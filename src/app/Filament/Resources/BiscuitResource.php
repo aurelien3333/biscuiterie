@@ -4,10 +4,13 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\BiscuitResource\Pages;
 use App\Filament\Resources\BiscuitResource\RelationManagers;
+use App\Filament\Resources\BiscuitResource\RelationManagers\IngredientsRelationManager;
 use App\Models\Biscuit;
+use App\Models\Fournisseur;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\MarkdownEditor;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
@@ -30,11 +33,28 @@ class BiscuitResource extends Resource
                     ->required(),
 
                Textarea::make('description')
-                    ->label('Description')
-                    ->required(),
-                FileUpload::make('attachment')
+                    ->label('Description'),
+
+                FileUpload::make('Image')
                     ->disk('public')
-                    ->directory('biscuits')
+                    ->directory('biscuits'),
+
+                TextInput::make('qte')
+                    ->label('Nb par venue')
+                    ->rules('required|integer|min:1')
+                    ->required(),
+                TextInput::make('price_emballage')
+                    ->label('Prix emballage')
+                    ->rules('required|numeric')
+                    ->required(),
+                TextInput::make('pourcentage_energie')
+                    ->label('Cout électricité en %')
+                    ->rules('required|numeric|max:100')
+                    ->required(),
+                TextInput::make('price_vente')
+                    ->label('Prix de vente unitaire')
+                    ->rules('required|numeric')
+                    ->required(),
             ]);
     }
 
@@ -42,7 +62,7 @@ class BiscuitResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('name'),
             ])
             ->filters([
                 //
@@ -52,7 +72,7 @@ class BiscuitResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            IngredientsRelationManager::class
         ];
     }
 

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
  * @property int $id
@@ -24,7 +25,7 @@ class Fournisseur extends Model
         'description',
     ];
 
-    public function ingredients()
+    public function ingredients(): BelongsToMany
     {
         return $this->belongsToMany(Ingredient::class);
     }
